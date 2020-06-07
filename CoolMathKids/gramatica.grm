@@ -1,0 +1,103 @@
+start : codigo;
+
+codigo : funcion graph;
+
+funcion : DEF ID PL (ID (',' ID)*)* PR LLL expresion LLR;
+
+graph : GRAPH PL ID ',' numero ',' numero PR;
+
+@expresionuno:
+    variable
+    | numero 
+    | expuno 
+    | expdos
+    | funcioncall
+    | parexpdos
+	;
+
+@expresiondos:
+    condicional 
+    | parexp 
+	;
+
+@expresion:
+    expresionuno
+    | expresiondos
+    | expresionlogica
+	;
+
+expresionlogica:
+    expresionuno (EQ | NE | LT | LE | GT | GE) expresionuno 
+    | TRUE 
+    | FALSE
+	;
+
+condicional:
+    IF PL expresionlogica PR LLL expresion LLR (ELSE LLL expresion LLR)?;
+
+variable:
+    ID;
+
+numero: 
+    '(\+|-)?[0-9]+(\.[0-9]+)?';
+
+parexp:
+    PL expresion PR;
+
+parexpdos:
+    (ADD | SUB)? PL expresionuno PR;
+
+expuno:
+    expresionuno (ADD | SUB) expresionuno;
+
+expdos:
+    expresionuno (MUL | DIV | MOD | POW) expresionuno;
+
+funcioncall:
+    ID PL (expresion (',' expresion)*)* PR;
+
+/**
+ * Lexer rules
+ *
+ * Here we define the tokens identified by the lexer.
+ */
+
+// COMENTARIOS
+ABRIR_COMENTARIO : '/\*';
+CERRAR_COMENTARIO : '\*/';
+COMENTARIO : ABRIR_COMENTARIO '.*?' CERRAR_COMENTARIO (%ignore);
+
+// SIMBOLOS ARITMETICOS
+ADD     : '\+';
+SUB     : '-';
+MUL     : '\*';
+DIV     : '/';
+MOD     : '%';
+POW     : '\^';
+
+// SIMBOLOS LOGICOS
+EQ      : '==';
+NE      : '!=';
+LT      : '<';
+LE      : '<=';
+GT      : '>';
+GE      : '>=';
+
+// TIPOS DE PARENTESIS
+PL      : '\(';
+PR      : '\)';
+LLL     : '{';
+LLR     : '}';
+
+// NOMBRES ID
+ID: '[a-z]+'
+    (%unless
+    	DEF		: 'func';
+    	IF      : 'if';
+    	ELSE    : 'else';
+    	TRUE    : 'true';
+    	FALSE   : 'false';
+        GRAPH   : 'graficar';
+    );
+
+WS : '[ \t\r\n]+' (%ignore);

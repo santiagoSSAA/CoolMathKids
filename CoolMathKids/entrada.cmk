@@ -1,0 +1,5 @@
+func g ( y ){
+    y + 3
+}
+
+graficar ( g , 0 , 50 )

@@ -1,0 +1,23 @@
+Mini Logo:
+
+fd a : forward "a" units.
+
+rt a : rotate to the right "a" degrees
+
+pu : doesn't show the turtle's path
+
+pd : show the turtle's path (only if the path was invisible previously)
+
+-------------------------------------------------------------------------------------
+
+FUNCIONES QUE SE PUEDEN IMPLEMENTAR DE FORMA INDIRECTA
+
+lt a : rotate to the left "a" degrees
+
+repeat a [ b ] : repeat "b" a total of "a" times
+
+setx a : moves the turtle's X position to "a"
+
+sety a : moves the turtle's Y position to "a"
+
+setxy a b : moves the turtles X position to "a" and the Y position to "b"
