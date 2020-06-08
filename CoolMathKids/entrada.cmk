@@ -1,9 +1,5 @@
 func g ( x ){
-    if ( x < 2) {
-        x
-    } else {
-        x ^ 2
-    }
+    x ^ 2
 }
 
 graficar ( g , 0 , 50 )
