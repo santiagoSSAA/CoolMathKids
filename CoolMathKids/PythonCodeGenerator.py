@@ -3,8 +3,7 @@ class CodeGenerator:
         self.ce = codeEmitter
         self.condCounter = 0
         self.functionArguments = {}
-        self.functions = []
-        self.currentfuncion = ""
+        self.numero_identacion = 0
         pass
     
     def visit(self, tree):
@@ -62,9 +61,10 @@ class CodeGenerator:
             self.ce.print("{}".format(x.tail[-1]))
         self.ce.println("):")
         i = i + 2
-        #print(tree.tail[i])
         body = tree.tail[i]
+        print(body)
         self.visit(body)
+        #print(a)
 
     def graph(self,tree):
         funcioncall = tree.tail[2]
@@ -76,17 +76,28 @@ class CodeGenerator:
     # pendiente
     def variable(self, tree):
         name = tree.tail[0]
-        #pos = self.functionArguments[self.currentfuncion][name]
-        pass
+        return name
 
     def numero(self, tree):
         value = tree.tail[0]
         return value
 
     def expuno(self, tree):
+        #print(tree.tail)
+        primer_expresion = self.visit(tree.tail[0])
+        signo = tree.tail[1]
+        segunda_expresion = self.visit(tree.tail[2])
+        #print("{} {} {}".format(primer_expresion, signo, segunda_expresion))
+        return("{} {} {}".format(primer_expresion, signo, segunda_expresion))
         pass
 
     def expdos(self, tree):
+        #print(tree.tail)
+        primer_expresion = self.visit(tree.tail[0])
+        signo = tree.tail[1]
+        segunda_expresion = self.visit(tree.tail[2])
+        #print("{} {} {}".format(primer_expresion, signo, segunda_expresion))
+        return("{} {} {}".format(primer_expresion, signo, segunda_expresion))
         pass
 
     #pendiente
@@ -97,18 +108,44 @@ class CodeGenerator:
         pass
 
     def parexpdos(self,tree):
+        signo = tree.tail[0]
+        pl = tree.tail[1]
+        pr = tree.tail[-1]
+        #print(tree.tail[2])
+        exp = self.visit(tree.tail[2])
+        #print("{} {} {} {}".format(signo, pl, exp, pr))
+        return("{} {} {} {}".format(signo, pl, exp, pr))
         pass
 
     def condicional(self,tree):
-        #print(tree.tail)
-        return 2
+        id_condicional = tree.tail[0]
+        pl = tree.tail[1]
+        pr = tree.tail[3]
+        expresion_logica = self.visit(tree.tail[2])
+        #print("{} {} {} {}:".format(id_condicional, pl, expresion_logica, pr))
+        lll = tree.tail[4]
+        rll = tree.tail[6] 
+        body_if = self.visit(tree.tail[5])
+        #print("{} {} {}".format(lll, body_if, rll))
+        if "else" in tree.tail:
+            else_expresion = tree.tail[7]
+            lll2 = tree.tail[8]
+            rll2 = tree.tail[-1]
+            body_else = self.visit(tree.tail[9])
+            #print(tree.tail[9])
+            #print("{} {} {} {}".format(else_expresion, lll2, body_else, rll2))
+
         pass
 
     def parexp(self,tree):
         #print("Parexpr *- {}".format(tree))
-        self.visit(tree.tail[1])
+        exp = self.visit(tree.tail[1])
+        return ("( {} )".format(exp))
         pass
 
     def expresionlogica(self,tree):
-        #print(tree.tail)
+        primer_expresion = self.visit(tree.tail[0])
+        signo = tree.tail[1]
+        segunda_expresion = self.visit(tree.tail[2])
+        return("{} {} {}".format(primer_expresion, signo, segunda_expresion))
         pass
