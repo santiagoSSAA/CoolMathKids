@@ -1,5 +1,13 @@
-func g ( x ){
-    x ^ 2
+func g ( x ) {
+    if ( x < 2 ) {
+        x
+    } else {
+        if ( x < 4 ) {
+            x ^ 2
+        } else {
+            x ^ 3
+        }
+    }
 }
 
 graficar ( g , 0 , 50 )

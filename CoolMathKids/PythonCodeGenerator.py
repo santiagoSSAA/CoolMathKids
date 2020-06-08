@@ -65,6 +65,7 @@ class CodeGenerator:
             self.visit(body)
         else:
             body = self.visit(body)
+            #print(body)
             body = str(body)
             self.numero_identacion += 4
             identacion = ""
@@ -185,13 +186,16 @@ class CodeGenerator:
 
             self.ce.println("{}{}:".format(identacion,else_expresion))
 
-            self.numero_identacion += 4
-            identacion = ""
-            for i in range(self.numero_identacion):
-                identacion = identacion + " "
+            if str(tree.tail[9].head) != "condicional":
+                self.numero_identacion += 4
+
             body_else = self.visit(tree.tail[9])
-            self.ce.println("{}return {}".format(identacion,body_else))
-            self.numero_identacion -= 4
+            if body_else != None:
+                identacion = ""
+                for i in range(self.numero_identacion):
+                    identacion = identacion + " "
+                self.ce.println("{}return {}".format(identacion,body_else))
+                self.numero_identacion -= 4
             #lll2 = tree.tail[8]
             #rll2 = tree.tail[-1]
             #print(tree.tail[9])
