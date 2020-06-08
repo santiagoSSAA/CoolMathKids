@@ -8,13 +8,7 @@ class CodeGenerator:
         pass
     
     def visit(self, tree):
-        method = False
-        try:
-            method = getattr(self, tree.head, None)
-        except AttributeError as e:
-            print(tree)
-            print(e)
-        
+        method = getattr(self, tree.head, None)
         if method:
             return method(tree)
         else:
@@ -58,11 +52,11 @@ class CodeGenerator:
         self.currentfuncion = nombre
         self.ce.print("def {}(".format(nombre))
         # Recorrer el contenido de las funciones
-        for x in arguments.keys():
-            self.ce.print("{}".format(x.tail[-1]))
-        self.ce.println("):")
+        #for x, i in zip(arguments.keys(), range(1,len(arguments.keys())+1)):
+        #    self.ce.print("{},".format(x))
+        #self.ce.println("):")
         i = i + 2
-        #print(tree.tail[i])
+        print(tree.tail[i])
         body = tree.tail[i]
         self.visit(body)
 
@@ -76,7 +70,7 @@ class CodeGenerator:
     # pendiente
     def variable(self, tree):
         name = tree.tail[0]
-        #pos = self.functionArguments[self.currentfuncion][name]
+        pos = self.functionArguments[self.currentfuncion][name]
         pass
 
     def numero(self, tree):

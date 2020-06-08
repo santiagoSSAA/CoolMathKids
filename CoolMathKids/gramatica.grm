@@ -2,7 +2,7 @@ start : codigo;
 
 codigo : funcion graph;
 
-funcion : DEF ID PL (ID (',' ID)*)* PR LLL expresion LLR;
+funcion : DEF ID PL variable PR LLL expresion LLR;
 
 graph : GRAPH PL ID ',' numero ',' numero PR;
 

@@ -1,9 +1,9 @@
 import sys
 from plyplus import Grammar
 from LogoCodeEmitter import LogoCodeEmitter
-#from CodeGenerator import CodeGenerator
 from PythonCodeEmitter import PythonCodeEmitter
-from PythonCodeGenerator import CodeGenerator
+import PythonCodeGenerator
+import LogoCodeGenerator
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
@@ -24,8 +24,10 @@ if __name__ == "__main__":
                     #print(arbol)
                     #arbol.to_png_with_pydot(r'arbol.png')
                     #logoCodeEmitter = LogoCodeEmitter(outpt)
+                    #logoCodeGenerator = LogoCodeGenerator.CodeGenerator(logoCodeEmitter)
+                    #logoCodeGenerator.visit(arbol)
                     pythonCodeEmitter = PythonCodeEmitter(outpt)
-                    pythonCodeGenerator = CodeGenerator(pythonCodeEmitter)
+                    pythonCodeGenerator = PythonCodeGenerator.CodeGenerator(pythonCodeEmitter)
                     pythonCodeGenerator.visit(arbol)
 
     pass
