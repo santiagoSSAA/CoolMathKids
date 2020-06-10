@@ -4,6 +4,7 @@ class CodeGenerator:
         self.condCounter = 0
         self.functionArguments = {}
         self.numero_identacion = 0
+        self.intrincate = False
     
     def visit(self, tree):
         method = False
@@ -35,7 +36,6 @@ class CodeGenerator:
         self.visit(graph)
         #self.ce.println("algo")
     
-    # pendiente
     def funcion(self, tree):
         nombre = tree.tail[1]
         arguments = {}
@@ -72,6 +72,7 @@ class CodeGenerator:
             identacion = ""
             for i in range(self.numero_identacion):
                 identacion = identacion + " "
+            #print(body)
             if str(body) != "None":
                 self.ce.println("{}return {}".format(identacion,body))
             self.numero_identacion -= 4
@@ -107,7 +108,6 @@ class CodeGenerator:
         #print(inicio.tail[0], final.tail[0])
         #self.ce.println("print(function({}))".format(rango))
 
-    # pendiente
     def variable(self, tree):
         name = tree.tail[0]
         return name
@@ -131,33 +131,51 @@ class CodeGenerator:
         if str(signo) == "^":
             signo = "**"
         segunda_expresion = self.visit(tree.tail[2])
-        #print("{} {} {}".format(primer_expresion, signo, segunda_expresion))
+        print("{} {} {}".format(primer_expresion, signo, segunda_expresion))
         return("{} {} {}".format(primer_expresion, signo, segunda_expresion))
 
-    #pendiente
     def funcioncall(self,tree):
         functions = ["sqrt", "log", "sin", "cos", "asin", "acos", "factorial", "exp"]
         name = tree.tail[0]
-        arg = self.visit(tree.tail[-2])
-        if name in functions:
-            self.numero_identacion += 4
-            identacion = ""
-            for i in range(self.numero_identacion):
-                identacion = identacion + " "
-            self.ce.println("{}return math.{}({})".format(identacion,name,arg))
-            self.numero_identacion -= 4       
-        #print(arg)
+        arg = None
+        if str(tree.tail[-2].head) == "funcioncall":
+            self.intrincate = True
+        if (self.intrincate == True):
+            arg = self.visit(tree.tail[-2])
+            print(tree.tail[-2],tree.tail[-2].tail[0])
+            return "math.{}({})".format(tree.tail[-2].tail[0],arg)
+        else:
+            arg = self.visit(tree.tail[-2])
+            if name in functions:
+                self.numero_identacion += 4
+                identacion = ""
+                for i in range(self.numero_identacion):
+                    identacion = identacion + " "
+                print(arg)
+                self.ce.println("{}return math.{}({})".format(identacion,name,arg))
+                self.numero_identacion -= 4       
 
     def parexpdos(self,tree):
-        signo = tree.tail[0]
-        pl = tree.tail[1]
-        pr = tree.tail[-1]
-        #print(tree.tail[2])
-        exp = self.visit(tree.tail[2])
-        #print(tree)
-        #print(exp)
-        #print("{} {} {} {}".format(signo, pl, exp, pr))
-        return("{} {} {} {}".format(signo, pl, exp, pr))
+        #print(tree.tail)
+        if "-" in tree.tail or "+" in tree.tail:
+            signo = tree.tail[0]
+            pl = tree.tail[1]
+            pr = tree.tail[-1]
+            #print(tree.tail[2])
+            exp = self.visit(tree.tail[2])
+            #print(tree)
+            #print(exp)
+            print("{} {} {} {}".format(signo, pl, exp, pr))
+            return("({} {} {} {})".format(signo, pl, exp, pr))
+        
+        else:
+            pl = tree.tail[0]
+            pr = tree.tail[-1]
+            print(tree.tail[1])
+            self.intrincate = True
+            exp = self.visit(tree.tail[1])
+            print("{} {} {}".format(pl, exp, pr))
+            return("{} {} {}".format(pl, exp, pr))
 
     def condicional(self,tree):
         id_condicional = tree.tail[0]
@@ -166,7 +184,9 @@ class CodeGenerator:
         expresion_logica = self.visit(tree.tail[2])
 
         # ESTABLECEMOS LA IDENTACION
-        self.numero_identacion += 4
+        if self.intrincate == False:
+            self.numero_identacion += 4
+        
         identacion = ""
         for i in range(self.numero_identacion):
             identacion = identacion + " "
@@ -179,6 +199,7 @@ class CodeGenerator:
         
         # ENTRAMOS EN EL CONDICIONAL
         body_if = tree.tail[5]
+        print(body_if.head)
         
         if str(body_if.head) != "funcioncall":
             self.numero_identacion += 4
@@ -227,6 +248,7 @@ class CodeGenerator:
     def parexp(self,tree):
         #print("Parexpr *- {}".format(tree))
         exp = self.visit(tree.tail[1])
+        #print(exp)
         return ("( {} )".format(exp))
 
     def expresionlogica(self,tree):

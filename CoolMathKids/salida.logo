@@ -1,0 +1,241 @@
+rt 90
+setpensize 5
+pd
+fd 1
+pu
+rt -45
+setpensize 1
+pd
+fd 30
+rt 45
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -45
+setpensize 1
+pd
+fd 30
+rt 45
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -45
+setpensize 1
+pd
+fd 30
+rt 45
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -45
+setpensize 1
+pd
+fd 30
+rt 45
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -45
+setpensize 1
+pd
+fd 30
+rt 45
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -45
+setpensize 1
+pd
+fd 30
+rt 45
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -45
+setpensize 1
+pd
+fd 30
+rt 45
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -45
+setpensize 1
+pd
+fd 30
+rt 45
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -45
+setpensize 1
+pd
+fd 30
+rt 45
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 30
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -87
+setpensize 1
+pd
+fd 30
+rt 87
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -87
+setpensize 1
+pd
+fd 30
+rt 87
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -87
+setpensize 1
+pd
+fd 30
+rt 87
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -87
+setpensize 1
+pd
+fd 30
+rt 87
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -88
+setpensize 1
+pd
+fd 30
+rt 88
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -88
+setpensize 1
+pd
+fd 30
+rt 88
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -88
+setpensize 1
+pd
+fd 30
+rt 88
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -88
+setpensize 1
+pd
+fd 30
+rt 88
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -88
+setpensize 1
+pd
+fd 30
+rt 88
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -88
+setpensize 1
+pd
+fd 30
+rt 88
+setpensize 5
+fd 1
+setpensize 1

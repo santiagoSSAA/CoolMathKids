@@ -1,5 +1,9 @@
 func g ( x ) {
-    x ^ 2
+    if ( x < 10){
+        x
+    } else{
+        x ^2
+    }
 }
 
-graficar ( g , 1 , 3 )
+graficar ( g , 1 , 20 )
