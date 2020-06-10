@@ -21,6 +21,7 @@ class CodeGenerator:
     def start(self, tree):
         codigo = tree.tail[0]
         self.ce.println("import numpy as np")
+        self.ce.println("import math")
         self.ce.println("")
         self.visit(codigo)
         #self.ce.println("main")
@@ -71,7 +72,8 @@ class CodeGenerator:
             identacion = ""
             for i in range(self.numero_identacion):
                 identacion = identacion + " "
-            self.ce.println("{}return {}".format(identacion,body))
+            if str(body) != "None":
+                self.ce.println("{}return {}".format(identacion,body))
             self.numero_identacion -= 4
         #print(a)
 
@@ -87,15 +89,23 @@ class CodeGenerator:
         for i in range(self.numero_identacion):
             identacion = identacion + " "
         self.ce.println("")
-        self.ce.println("function = np.frompyfunc({}, 1, 1)".format(str(funcioncall)))
+        #self.ce.println("function = np.frompyfunc({}, 1, 1)".format(str(funcioncall)))
+        dominio = "function = np.frompyfunc({}, 1, 1)".format(str(funcioncall))
 
         # DEFINIMOS EL RANGO
         inicio = int(inicio.tail[0])
         final = int(final.tail[0])
         rango = [i for i in range(int(str(inicio)),int(str(final))+1)]
+        
+        # CREAMOS LA FUNCION PARA GRAFICAR
+        self.ce.println("def graficar():")
+        self.ce.println("    {}".format(dominio))
+        self.ce.println("    return function({})".format(rango))
+        
+        
         #print(rango)
         #print(inicio.tail[0], final.tail[0])
-        self.ce.println("print(function({}))".format(rango))
+        #self.ce.println("print(function({}))".format(rango))
 
     # pendiente
     def variable(self, tree):
@@ -126,9 +136,17 @@ class CodeGenerator:
 
     #pendiente
     def funcioncall(self,tree):
+        functions = ["sqrt", "log", "sin", "cos", "asin", "acos", "factorial", "exp"]
         name = tree.tail[0]
-        args = [x for x in tree.tail[2:-1] if x != ',']
-        #print(args)
+        arg = self.visit(tree.tail[-2])
+        if name in functions:
+            self.numero_identacion += 4
+            identacion = ""
+            for i in range(self.numero_identacion):
+                identacion = identacion + " "
+            self.ce.println("{}return math.{}({})".format(identacion,name,arg))
+            self.numero_identacion -= 4       
+        #print(arg)
 
     def parexpdos(self,tree):
         signo = tree.tail[0]
@@ -161,17 +179,19 @@ class CodeGenerator:
         
         # ENTRAMOS EN EL CONDICIONAL
         body_if = tree.tail[5]
-        #print(body_if)
         
-        self.numero_identacion += 4
-        identacion = ""
-        for i in range(self.numero_identacion):
-            identacion = identacion + " "
+        if str(body_if.head) != "funcioncall":
+            self.numero_identacion += 4
+            identacion = ""
+            for i in range(self.numero_identacion):
+                identacion = identacion + " "
 
         contenido_if = self.visit(body_if)
-        self.ce.println("{}return {}".format(identacion,contenido_if))
+        if str(contenido_if) != "None":
+            self.ce.println("{}return {}".format(identacion,contenido_if))
 
-        self.numero_identacion -= 4
+        if str(body_if.head) != "funcioncall":
+            self.numero_identacion -= 4
 
         #lll = tree.tail[4]
         #rll = tree.tail[6] 
@@ -186,7 +206,7 @@ class CodeGenerator:
 
             self.ce.println("{}{}:".format(identacion,else_expresion))
 
-            if str(tree.tail[9].head) != "condicional":
+            if str(tree.tail[9].head) not in ["condicional", "funcioncall"]:
                 self.numero_identacion += 4
 
             body_else = self.visit(tree.tail[9])
@@ -195,6 +215,8 @@ class CodeGenerator:
                 for i in range(self.numero_identacion):
                     identacion = identacion + " "
                 self.ce.println("{}return {}".format(identacion,body_else))
+            
+            if str(tree.tail[9].head) not in ["condicional", "funcioncall"]:
                 self.numero_identacion -= 4
             #lll2 = tree.tail[8]
             #rll2 = tree.tail[-1]

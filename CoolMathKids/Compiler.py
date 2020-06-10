@@ -15,20 +15,28 @@ if __name__ == "__main__":
     else:
         cmkFile = sys.argv[1]
         logoFile = sys.argv[2]
+        inputCode = None
+        arbol = None
 
         with open('gramatica.grm', 'r') as gramatica:
             with open(cmkFile, 'r') as inpt:
-                with open(logoFile, 'w') as outpt:
-                    with open("salida.py","w") as outpt_py:
-                        inputCode = inpt.read()
-                        arbol = Grammar(gramatica, auto_filter_tokens=False).parse(inputCode)
-                        #print(arbol)
-                        #arbol.to_png_with_pydot(r'arbol.png')
-                        #logoCodeEmitter = LogoCodeEmitter(outpt)
-                        #logoCodeGenerator = LogoCodeGenerator.CodeGenerator(logoCodeEmitter)
-                        #logoCodeGenerator.visit(arbol)
-                        pythonCodeEmitter = PythonCodeEmitter(outpt_py)
-                        pythonCodeGenerator = PythonCodeGenerator.CodeGenerator(pythonCodeEmitter)
-                        pythonCodeGenerator.visit(arbol)
+                inputCode = inpt.read()
+                arbol = Grammar(gramatica, auto_filter_tokens=False).parse(inputCode)
+                #print(arbol)
+                #arbol.to_png_with_pydot(r'arbol.png')
+                inpt.close()
+            gramatica.close()
+                
+        with open("salida.py","w") as outpt_py:
+            pythonCodeEmitter = PythonCodeEmitter(outpt_py)
+            pythonCodeGenerator = PythonCodeGenerator.CodeGenerator(pythonCodeEmitter)
+            pythonCodeGenerator.visit(arbol)
+            outpt_py.flush()
+            outpt_py.close()
 
+        with open(logoFile, 'w') as outpt:     
+            logoCodeEmitter = LogoCodeEmitter(outpt)
+            logoCodeGenerator = LogoCodeGenerator.CodeGenerator(logoCodeEmitter)
+            logoCodeGenerator.generate()
+            outpt.close()
     pass
