@@ -2,7 +2,8 @@ import sys
 from plyplus import Grammar
 from LogoCodeEmitter import LogoCodeEmitter
 from PythonCodeEmitter import PythonCodeEmitter
-import PythonCodeGenerator
+from PythonCodeGenerator import CodeGenerator
+#from tast import CodeGenerator
 import LogoCodeGenerator
 
 if __name__ == "__main__":
@@ -29,14 +30,15 @@ if __name__ == "__main__":
                 
         with open("salida.py","w") as outpt_py:
             pythonCodeEmitter = PythonCodeEmitter(outpt_py)
-            pythonCodeGenerator = PythonCodeGenerator.CodeGenerator(pythonCodeEmitter)
+            pythonCodeGenerator = CodeGenerator(pythonCodeEmitter)
             pythonCodeGenerator.visit(arbol)
             outpt_py.flush()
             outpt_py.close()
-
+        
         with open(logoFile, 'w') as outpt:     
             logoCodeEmitter = LogoCodeEmitter(outpt)
             logoCodeGenerator = LogoCodeGenerator.CodeGenerator(logoCodeEmitter)
             logoCodeGenerator.generate()
             outpt.close()
+        
     pass

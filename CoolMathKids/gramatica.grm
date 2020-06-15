@@ -4,7 +4,7 @@ codigo : funcion graph;
 
 funcion : DEF ID PL variable PR LLL expresion LLR;
 
-graph : GRAPH PL ID ',' numero ',' numero PR;
+graph : GRAPH PL ID ',' numero ',' numero ',' numero PR;
 
 @expresionuno:
     variable

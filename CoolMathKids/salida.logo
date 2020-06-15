@@ -1,3 +1,24 @@
+setscrunch 0.5 0.5
+rt 270
+pu
+fd 1000
+rt 270
+fd 400
+rt 270
+pd
+window
+fd 1400
+rt 180
+fd 1800
+rt 180
+fd 450
+rt 90
+fd 150
+rt 180
+fd 450
+rt 180
+fd 300
+rt 180
 rt 90
 setpensize 5
 pd
@@ -6,8 +27,20 @@ pu
 rt -45
 setpensize 1
 pd
-fd 30
+fd 40
 rt 45
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt 0
+setpensize 1
+pd
+fd 40
+rt 0
 setpensize 5
 fd 1
 setpensize 1
@@ -18,7 +51,7 @@ pu
 rt -45
 setpensize 1
 pd
-fd 30
+fd 40
 rt 45
 setpensize 5
 fd 1
@@ -27,11 +60,11 @@ setpensize 5
 pd
 fd 1
 pu
-rt -45
+rt 0
 setpensize 1
 pd
-fd 30
-rt 45
+fd 40
+rt 0
 setpensize 5
 fd 1
 setpensize 1
@@ -39,11 +72,11 @@ setpensize 5
 pd
 fd 1
 pu
-rt -45
+rt -71
 setpensize 1
 pd
-fd 30
-rt 45
+fd 40
+rt 71
 setpensize 5
 fd 1
 setpensize 1
@@ -51,11 +84,11 @@ setpensize 5
 pd
 fd 1
 pu
-rt -45
+rt 0
 setpensize 1
 pd
-fd 30
-rt 45
+fd 40
+rt 0
 setpensize 5
 fd 1
 setpensize 1
@@ -63,11 +96,11 @@ setpensize 5
 pd
 fd 1
 pu
-rt -45
+rt -86
 setpensize 1
 pd
-fd 30
-rt 45
+fd 40
+rt 86
 setpensize 5
 fd 1
 setpensize 1
@@ -75,35 +108,11 @@ setpensize 5
 pd
 fd 1
 pu
-rt -45
+rt -71
 setpensize 1
 pd
-fd 30
-rt 45
-setpensize 5
-fd 1
-setpensize 1
-setpensize 5
-pd
-fd 1
-pu
-rt -45
-setpensize 1
-pd
-fd 30
-rt 45
-setpensize 5
-fd 1
-setpensize 1
-setpensize 5
-pd
-fd 1
-pu
-rt -45
-setpensize 1
-pd
-fd 30
-rt 45
+fd 40
+rt 71
 setpensize 5
 fd 1
 setpensize 1
@@ -114,7 +123,7 @@ pu
 rt -89
 setpensize 1
 pd
-fd 30
+fd 40
 rt 89
 setpensize 5
 fd 1
@@ -126,7 +135,7 @@ pu
 rt -87
 setpensize 1
 pd
-fd 30
+fd 40
 rt 87
 setpensize 5
 fd 1
@@ -135,11 +144,11 @@ setpensize 5
 pd
 fd 1
 pu
-rt -87
+rt -89
 setpensize 1
 pd
-fd 30
-rt 87
+fd 40
+rt 89
 setpensize 5
 fd 1
 setpensize 1
@@ -147,11 +156,11 @@ setpensize 5
 pd
 fd 1
 pu
-rt -87
+rt -89
 setpensize 1
 pd
-fd 30
-rt 87
+fd 40
+rt 89
 setpensize 5
 fd 1
 setpensize 1
@@ -159,11 +168,11 @@ setpensize 5
 pd
 fd 1
 pu
-rt -87
+rt -89
 setpensize 1
 pd
-fd 30
-rt 87
+fd 40
+rt 89
 setpensize 5
 fd 1
 setpensize 1
@@ -171,11 +180,11 @@ setpensize 5
 pd
 fd 1
 pu
-rt -88
+rt -89
 setpensize 1
 pd
-fd 30
-rt 88
+fd 40
+rt 89
 setpensize 5
 fd 1
 setpensize 1
@@ -183,11 +192,11 @@ setpensize 5
 pd
 fd 1
 pu
-rt -88
+rt -89
 setpensize 1
 pd
-fd 30
-rt 88
+fd 40
+rt 89
 setpensize 5
 fd 1
 setpensize 1
@@ -195,11 +204,11 @@ setpensize 5
 pd
 fd 1
 pu
-rt -88
+rt -89
 setpensize 1
 pd
-fd 30
-rt 88
+fd 40
+rt 89
 setpensize 5
 fd 1
 setpensize 1
@@ -207,11 +216,11 @@ setpensize 5
 pd
 fd 1
 pu
-rt -88
+rt -89
 setpensize 1
 pd
-fd 30
-rt 88
+fd 40
+rt 89
 setpensize 5
 fd 1
 setpensize 1
@@ -219,11 +228,11 @@ setpensize 5
 pd
 fd 1
 pu
-rt -88
+rt -89
 setpensize 1
 pd
-fd 30
-rt 88
+fd 40
+rt 89
 setpensize 5
 fd 1
 setpensize 1
@@ -231,11 +240,983 @@ setpensize 5
 pd
 fd 1
 pu
-rt -88
+rt -89
 setpensize 1
 pd
-fd 30
-rt 88
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -89
+setpensize 1
+pd
+fd 40
+rt 89
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt 90
+setpensize 1
+pd
+fd 40
+rt -90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt 90
+setpensize 1
+pd
+fd 40
+rt -90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt 90
+setpensize 1
+pd
+fd 40
+rt -90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt 90
+setpensize 1
+pd
+fd 40
+rt -90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt 90
+setpensize 1
+pd
+fd 40
+rt -90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt 90
+setpensize 1
+pd
+fd 40
+rt -90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt 90
+setpensize 1
+pd
+fd 40
+rt -90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt 90
+setpensize 1
+pd
+fd 40
+rt -90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt 90
+setpensize 1
+pd
+fd 40
+rt -90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt 90
+setpensize 1
+pd
+fd 40
+rt -90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
+setpensize 5
+fd 1
+setpensize 1
+setpensize 5
+pd
+fd 1
+pu
+rt -90
+setpensize 1
+pd
+fd 40
+rt 90
 setpensize 5
 fd 1
 setpensize 1
